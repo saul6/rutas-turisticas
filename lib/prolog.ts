@@ -14,7 +14,7 @@ const CIUDADES_VALIDAS = new Set([
   'tacambaro', 'tingambato', 'santa_clara_del_cobre', 'tzintzuntzan',
 ]);
 
-const SWIPL = 'C:\\Program Files\\swipl\\bin\\swipl.exe';
+const SWIPL = process.env.SWIPL_PATH ?? 'swipl';
 const BASE_REGLAS = path.join(process.cwd(), 'base_reglas.pl');
 const TIMEOUT_MS = 15_000;
 

@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface ResultadoRuta {
   ruta: string[]
@@ -185,11 +186,19 @@ export default function MapaCliente() {
     <div className="flex flex-col h-screen bg-gray-50 overflow-hidden">
       {/* ── Header ── */}
       <header className="bg-green-700 text-white px-5 py-3 flex items-center justify-between shadow-md shrink-0 z-10">
-        <div>
-          <h1 className="text-lg font-bold leading-tight tracking-tight">
-            Rutas Turísticas · Michoacán
-          </h1>
-          <p className="text-green-300 text-xs">Sistema experto · SWI-Prolog + Next.js</p>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-1.5 text-green-200 hover:text-white text-xs font-medium transition-colors bg-green-800/50 hover:bg-green-800 px-3 py-1.5 rounded-full"
+          >
+            ← Inicio
+          </Link>
+          <div>
+            <h1 className="text-lg font-bold leading-tight tracking-tight">
+              Rutas Turísticas · Michoacán
+            </h1>
+            <p className="text-green-300 text-xs">Sistema experto · SWI-Prolog + Next.js</p>
+          </div>
         </div>
         <div className="flex gap-1.5">
           {origen && (
